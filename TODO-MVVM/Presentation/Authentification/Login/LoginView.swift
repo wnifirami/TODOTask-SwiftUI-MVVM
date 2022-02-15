@@ -18,23 +18,8 @@ struct LoginView: View {
     }
     var body: some View {
         VStack(alignment: .center, spacing: 15.0){
-            VStack(alignment: .leading,spacing: 5) {
-                Text("Task")
-                    .font(.largeTitle)
-                    .fontWeight(.black)
-                    .padding(.horizontal)
-                    .foregroundColor(.red)
-               
-                Text("odo")
-                    .font(.largeTitle)
-                    .fontWeight(.black)
-                    .rotationEffect(.degrees(90))
-                    .foregroundColor(.blue)
-            }
-            .padding(.vertical, 40)
-
-            EntryField(iconName: "lock", placeholder: "Password", prompt: viewModel.passwordPrompt,isSecure: true,isPasswordField: true, field: $viewModel.password)
             EntryField(iconName: "envelope", placeholder: "Email", prompt: viewModel.emailPrompt, field: $viewModel.email)
+            EntryField(iconName: "lock", placeholder: "Password", prompt: viewModel.passwordPrompt,isSecure: true,isPasswordField: true, field: $viewModel.password)
 
 
                 Button(action: {
