@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA0DD01327BBC4400007B284 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD01227BBC4400007B284 /* ErrorView.swift */; };
+		EA0DD01527BBC4600007B284 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD01427BBC4600007B284 /* ErrorViewModel.swift */; };
+		EA0DD01827BBC4BC0007B284 /* ImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD01727BBC4BC0007B284 /* ImageNames.swift */; };
+		EA0DD01A27BBC5410007B284 /* ErrorViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD01927BBC5410007B284 /* ErrorViewFactory.swift */; };
+		EA0DD01D27BBCCCA0007B284 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = EA0DD01C27BBCCCA0007B284 /* SwiftKeychainWrapper */; };
+		EA0DD02027BBCD030007B284 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD01F27BBCD030007B284 /* KeychainStorage.swift */; };
+		EA0DD02227BBCDFE0007B284 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD02127BBCDFE0007B284 /* BundleExtension.swift */; };
+		EA0DD02527BBD9160007B284 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD02427BBD9160007B284 /* LoginView.swift */; };
+		EA0DD02727BBD9290007B284 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD02627BBD9290007B284 /* LoginViewModel.swift */; };
+		EA0DD02927BBDADC0007B284 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD02827BBDADC0007B284 /* LoginUseCase.swift */; };
+		EA0DD02B27BBDDD10007B284 /* LoginViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD02A27BBDDD10007B284 /* LoginViewFactory.swift */; };
 		EA65DFF127BAAB9F00CEABA8 /* TODO_MVVMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65DFF027BAAB9F00CEABA8 /* TODO_MVVMApp.swift */; };
 		EA65DFF327BAAB9F00CEABA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65DFF227BAAB9F00CEABA8 /* ContentView.swift */; };
 		EA65DFF527BAABA200CEABA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA65DFF427BAABA200CEABA8 /* Assets.xcassets */; };
@@ -52,6 +63,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA0DD01227BBC4400007B284 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		EA0DD01427BBC4600007B284 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
+		EA0DD01727BBC4BC0007B284 /* ImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNames.swift; sourceTree = "<group>"; };
+		EA0DD01927BBC5410007B284 /* ErrorViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewFactory.swift; sourceTree = "<group>"; };
+		EA0DD01F27BBCD030007B284 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		EA0DD02127BBCDFE0007B284 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		EA0DD02427BBD9160007B284 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EA0DD02627BBD9290007B284 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		EA0DD02827BBDADC0007B284 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		EA0DD02A27BBDDD10007B284 /* LoginViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewFactory.swift; sourceTree = "<group>"; };
 		EA65DFED27BAAB9F00CEABA8 /* TODO-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TODO-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA65DFF027BAAB9F00CEABA8 /* TODO_MVVMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO_MVVMApp.swift; sourceTree = "<group>"; };
 		EA65DFF227BAAB9F00CEABA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0DD01D27BBCCCA0007B284 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +130,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA0DD01127BBC3C60007B284 /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				EA0DD01227BBC4400007B284 /* ErrorView.swift */,
+				EA0DD01427BBC4600007B284 /* ErrorViewModel.swift */,
+				EA0DD01927BBC5410007B284 /* ErrorViewFactory.swift */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		EA0DD01627BBC4A90007B284 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				EA65E05627BAF9D200CEABA8 /* TextConstants.swift */,
+				EA0DD01727BBC4BC0007B284 /* ImageNames.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		EA0DD01E27BBCCE90007B284 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				EA0DD01F27BBCD030007B284 /* KeychainStorage.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		EA0DD02327BBD9010007B284 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EA0DD02427BBD9160007B284 /* LoginView.swift */,
+				EA0DD02627BBD9290007B284 /* LoginViewModel.swift */,
+				EA0DD02A27BBDDD10007B284 /* LoginViewFactory.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		EA65DFE427BAAB9F00CEABA8 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +240,8 @@
 		EA65E01B27BAAC1E00CEABA8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EA65E04B27BAC1B700CEABA8 /* ContentView */,
+				EA0DD01127BBC3C60007B284 /* ErrorView */,
 				EA65E02527BAAEDC00CEABA8 /* Authentification */,
 			);
 			path = Presentation;
@@ -230,9 +291,10 @@
 		EA65E02127BAAC7A00CEABA8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EA0DD01E27BBCCE90007B284 /* Config */,
+				EA0DD01627BBC4A90007B284 /* Constants */,
 				EA65E05327BAF55D00CEABA8 /* Extensions */,
 				EA65E04727BABAF500CEABA8 /* Connectivity.swift */,
-				EA65E05627BAF9D200CEABA8 /* TextConstants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -240,7 +302,7 @@
 		EA65E02527BAAEDC00CEABA8 /* Authentification */ = {
 			isa = PBXGroup;
 			children = (
-				EA65E04B27BAC1B700CEABA8 /* ContentView */,
+				EA0DD02327BBD9010007B284 /* Login */,
 				EA65E02627BAAEF600CEABA8 /* Register */,
 			);
 			path = Authentification;
@@ -251,7 +313,6 @@
 			children = (
 				EA65E04E27BAEF5900CEABA8 /* EntryField */,
 				EA65E02727BAAF1000CEABA8 /* RegisterView.swift */,
-				EA65E05127BAEF8500CEABA8 /* EntryField.swift */,
 				EA65E04327BAB8EA00CEABA8 /* RegisterFactory.swift */,
 				EA65E04527BAB8FB00CEABA8 /* RegisterViewModel.swift */,
 			);
@@ -314,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				EA65E04027BAB77500CEABA8 /* RegisterUseCase.swift */,
+				EA0DD02827BBDADC0007B284 /* LoginUseCase.swift */,
 			);
 			path = AuthentificationUseCase;
 			sourceTree = "<group>";
@@ -331,6 +393,7 @@
 		EA65E04E27BAEF5900CEABA8 /* EntryField */ = {
 			isa = PBXGroup;
 			children = (
+				EA65E05127BAEF8500CEABA8 /* EntryField.swift */,
 			);
 			path = EntryField;
 			sourceTree = "<group>";
@@ -339,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				EA65E05427BAF57000CEABA8 /* StringExtension.swift */,
+				EA0DD02127BBCDFE0007B284 /* BundleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,6 +423,9 @@
 			dependencies = (
 			);
 			name = "TODO-MVVM";
+			packageProductDependencies = (
+				EA0DD01C27BBCCCA0007B284 /* SwiftKeychainWrapper */,
+			);
 			productName = "TODO-MVVM";
 			productReference = EA65DFED27BAAB9F00CEABA8 /* TODO-MVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -431,6 +498,9 @@
 				Base,
 			);
 			mainGroup = EA65DFE427BAAB9F00CEABA8;
+			packageReferences = (
+				EA0DD01B27BBCCCA0007B284 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			productRefGroup = EA65DFEE27BAAB9F00CEABA8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -474,9 +544,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA65E04D27BAC1DC00CEABA8 /* ContentFactory.swift in Sources */,
+				EA0DD02B27BBDDD10007B284 /* LoginViewFactory.swift in Sources */,
 				EA65E03027BAB0D800CEABA8 /* NetworkRequest.swift in Sources */,
 				EA65DFF327BAAB9F00CEABA8 /* ContentView.swift in Sources */,
 				EA65E04827BABAF500CEABA8 /* Connectivity.swift in Sources */,
+				EA0DD01327BBC4400007B284 /* ErrorView.swift in Sources */,
 				EA65E03927BAB45E00CEABA8 /* EndPoint.swift in Sources */,
 				EA65E02C27BAAF7600CEABA8 /* NetworkConfig.swift in Sources */,
 				EA65E04A27BAC0CB00CEABA8 /* BaseViewModel.swift in Sources */,
@@ -487,12 +559,20 @@
 				EA65E04127BAB77500CEABA8 /* RegisterUseCase.swift in Sources */,
 				EA65E02E27BAB0A500CEABA8 /* Requestable.swift in Sources */,
 				EA65E03E27BAB6B600CEABA8 /* AuthentificationRepository.swift in Sources */,
+				EA0DD02227BBCDFE0007B284 /* BundleExtension.swift in Sources */,
 				EA65E04627BAB8FB00CEABA8 /* RegisterViewModel.swift in Sources */,
 				EA65DFF127BAAB9F00CEABA8 /* TODO_MVVMApp.swift in Sources */,
+				EA0DD02027BBCD030007B284 /* KeychainStorage.swift in Sources */,
+				EA0DD01827BBC4BC0007B284 /* ImageNames.swift in Sources */,
+				EA0DD02727BBD9290007B284 /* LoginViewModel.swift in Sources */,
 				EA65E02427BAADD100CEABA8 /* AppConfiguration.swift in Sources */,
+				EA0DD02927BBDADC0007B284 /* LoginUseCase.swift in Sources */,
+				EA0DD02527BBD9160007B284 /* LoginView.swift in Sources */,
 				EA65E05527BAF57100CEABA8 /* StringExtension.swift in Sources */,
 				EA65E03B27BAB64400CEABA8 /* User.swift in Sources */,
 				EA65E04427BAB8EA00CEABA8 /* RegisterFactory.swift in Sources */,
+				EA0DD01A27BBC5410007B284 /* ErrorViewFactory.swift in Sources */,
+				EA0DD01527BBC4600007B284 /* ErrorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,6 +903,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA0DD01B27BBCCCA0007B284 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA0DD01C27BBCCCA0007B284 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA0DD01B27BBCCCA0007B284 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA65DFE527BAAB9F00CEABA8 /* Project object */;
 }

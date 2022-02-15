@@ -1,21 +1,21 @@
 //
-//  RegisterUseCase.swift
+//  LoginUseCase.swift
 //  TODO-MVVM
 //
-//  Created by Rami Ounifi on 14/2/2022.
+//  Created by Rami Ounifi on 15/2/2022.
 //
 
 import Foundation
 import Combine
-protocol RegisterUseCaseProtocol {
-    func execute(requestValue: RegisterRequest)  -> AnyPublisher<RegisterResponse, NetworkError>
+protocol LoginUseCaseProtocol {
+    func execute(requestValue: LoginRequest)  -> AnyPublisher<RegisterResponse, NetworkError>
     func saveUser(requestValue: RegisterResponse)  -> AnyPublisher<Bool, Never>
     func getUser() -> AnyPublisher<RegisterResponse?, KeyChainError>
 }
 
 
 
-class RegisterUseCase: RegisterUseCaseProtocol {
+class LoginUseCase: LoginUseCaseProtocol {
     func getUser() -> AnyPublisher<RegisterResponse?, KeyChainError> {
         return registerRepository.getUserData()
     }
@@ -34,9 +34,7 @@ class RegisterUseCase: RegisterUseCaseProtocol {
         self.registerRepository = registerRepository
     }
 
-    func execute(requestValue: RegisterRequest)  -> AnyPublisher<RegisterResponse, NetworkError> {
-        registerRepository.registerUser(request: requestValue)
+    func execute(requestValue: LoginRequest)  -> AnyPublisher<RegisterResponse, NetworkError> {
+        registerRepository.LoginUser(request: requestValue)
     }
 }
-
-

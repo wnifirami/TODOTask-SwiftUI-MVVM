@@ -11,4 +11,5 @@ struct TextConstants {
     static let passwordPrompt: String = "Password must contain uppercase,lowercase,numbers,special caracter and at least 8 caracters"
     static let agePrompt: String = "Enter a valid age, it must be a number"
     static let namePrompt: String = "Enter a valid name"
+    static let offlineError = "Ooops! we lost internet connection"
 }

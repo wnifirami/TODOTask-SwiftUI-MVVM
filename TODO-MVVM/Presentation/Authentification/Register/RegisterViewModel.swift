@@ -18,7 +18,6 @@ protocol RegisterViewModelInput {
 
 protocol RegisterViewModelOutput {
     var state: RegisterViewModel.State { get }
-
 }
     
 class RegisterViewModel: ObservableObject {
@@ -94,10 +93,32 @@ extension RegisterViewModel:  InputOutput {
                     print("nothing much to do here")
                 }
             } receiveValue: { (response) in
+                self.saveUserInKeyChain(user: response)
                 debugPrint(response)
+                
                 self.state = .success(response)
             }
             .store(in: &subscriptions)
+    }
+    
+    private func saveUserInKeyChain(user: RegisterResponse) {
+        useCase.saveUser(requestValue: user)
+            .sink { (completion) in
+                switch completion {
+                case .failure( _):
+                   debugPrint("can't save")
+                case .finished:
+                   break
+                }
+            } receiveValue: { result in
+                if result {
+                    debugPrint("saved")
+                } else {
+                    debugPrint("not saved")
+                }
+            }
+            .store(in: &subscriptions)
+
     }
     
     func viewDidLoad() {

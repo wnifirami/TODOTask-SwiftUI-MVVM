@@ -13,13 +13,13 @@ enum AuthentificationServiceEndpoints {
     
   // organise all the end points here for clarity
     case registerUser(request: RegisterRequest)
-
+    case loginUser(request: LoginRequest)
     
 
   //specify the type of HTTP request
     var httpMethod: HTTPMethod {
         switch self {
-        case .registerUser:
+        case .registerUser, .loginUser:
             return .POST
         }
     }
@@ -36,6 +36,8 @@ enum AuthentificationServiceEndpoints {
         switch self {
         case .registerUser(let request):
             return request
+        case .loginUser(let request):
+            return request
         }
     }
     
@@ -44,6 +46,8 @@ enum AuthentificationServiceEndpoints {
         switch self {
         case .registerUser:
             return EndPoints.registerUser.description
+        case .loginUser:
+            return EndPoints.loginUser.description
         }
     }
 }

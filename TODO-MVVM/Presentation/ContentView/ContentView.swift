@@ -29,11 +29,10 @@ struct ContentView: View {
                 RegisterViewFactory.makeView()
 
             default:
-//                ErrorViewsFactory.configureErrorView(
-//                    from: offline_error,
-//                    isNetwork: true
-//                )
-Text("oooops! no network")
+                ErrorViewFactory.makeView(
+                    from: TextConstants.offlineError,
+                    isNetwork: true
+                )
             }
         }
     }

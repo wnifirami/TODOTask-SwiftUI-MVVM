@@ -9,13 +9,14 @@ import Foundation
 enum EndPoints {
     /// cases
     case registerUser
+    case loginUser
 
     /// variable path qui retourne l'url a utiliser
     var path: String {
         switch self {
 
         case .registerUser: return "/user/register"
-
+        case .loginUser: return "/user/login"
         }
     }
 }

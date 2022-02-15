@@ -6,3 +6,15 @@
 //
 
 import Foundation
+struct ErrorViewModel{
+    let message: String
+    let isNetwork: Bool
+    init(
+        message: String,
+        isNetwork: Bool
+    ) {
+        self.message = message
+        self.isNetwork = isNetwork
+    }    
+}
+

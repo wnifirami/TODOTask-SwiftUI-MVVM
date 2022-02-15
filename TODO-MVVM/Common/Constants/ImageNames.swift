@@ -6,3 +6,7 @@
 //
 
 import Foundation
+struct ImageNames {
+    static let xmarkCircle: String = "xmark.circle.fill"
+    static let xmarkCloud: String = "xmark.icloud.fill"
+}

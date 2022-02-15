@@ -21,3 +21,17 @@ struct User: Codable {
         case v = "__v"
     }
 }
+
+struct RegisterRequest: Codable {
+    let name, email, password: String
+    let age: Int
+}
+
+struct LoginRequest: Codable {
+    let email, password: String
+}
+
+struct RegisterResponse: Codable {
+    let user: User
+    let token: String
+}
