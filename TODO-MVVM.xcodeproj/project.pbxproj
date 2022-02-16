@@ -18,6 +18,7 @@
 		EA0DD02727BBD9290007B284 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD02627BBD9290007B284 /* LoginViewModel.swift */; };
 		EA0DD02927BBDADC0007B284 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD02827BBDADC0007B284 /* LoginUseCase.swift */; };
 		EA0DD02B27BBDDD10007B284 /* LoginViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0DD02A27BBDDD10007B284 /* LoginViewFactory.swift */; };
+		EA5B480A27BD2AD5004FAA81 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B480927BD2AD5004FAA81 /* MainView.swift */; };
 		EA65DFF127BAAB9F00CEABA8 /* TODO_MVVMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65DFF027BAAB9F00CEABA8 /* TODO_MVVMApp.swift */; };
 		EA65DFF327BAAB9F00CEABA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65DFF227BAAB9F00CEABA8 /* ContentView.swift */; };
 		EA65DFF527BAABA200CEABA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA65DFF427BAABA200CEABA8 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		EA0DD02627BBD9290007B284 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EA0DD02827BBDADC0007B284 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		EA0DD02A27BBDDD10007B284 /* LoginViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewFactory.swift; sourceTree = "<group>"; };
+		EA5B480927BD2AD5004FAA81 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EA65DFED27BAAB9F00CEABA8 /* TODO-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TODO-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA65DFF027BAAB9F00CEABA8 /* TODO_MVVMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO_MVVMApp.swift; sourceTree = "<group>"; };
 		EA65DFF227BAAB9F00CEABA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		EA5B480827BD2AAE004FAA81 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				EA5B480927BD2AD5004FAA81 /* MainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 		EA65DFE427BAAB9F00CEABA8 = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +250,7 @@
 		EA65E01B27BAAC1E00CEABA8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EA5B480827BD2AAE004FAA81 /* MainView */,
 				EA65E04B27BAC1B700CEABA8 /* ContentView */,
 				EA0DD01127BBC3C60007B284 /* ErrorView */,
 				EA65E02527BAAEDC00CEABA8 /* Authentification */,
@@ -571,6 +582,7 @@
 				EA65E05527BAF57100CEABA8 /* StringExtension.swift in Sources */,
 				EA65E03B27BAB64400CEABA8 /* User.swift in Sources */,
 				EA65E04427BAB8EA00CEABA8 /* RegisterFactory.swift in Sources */,
+				EA5B480A27BD2AD5004FAA81 /* MainView.swift in Sources */,
 				EA0DD01A27BBC5410007B284 /* ErrorViewFactory.swift in Sources */,
 				EA0DD01527BBC4600007B284 /* ErrorViewModel.swift in Sources */,
 			);

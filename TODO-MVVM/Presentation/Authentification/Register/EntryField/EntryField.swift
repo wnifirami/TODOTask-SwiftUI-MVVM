@@ -41,9 +41,10 @@ struct EntryField: View {
                 .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.secondary, lineWidth: 1))
             
             Text(prompt)
-                .fixedSize(horizontal: false, vertical: true)
                 .font(.caption)
-                .foregroundColor(.red)
+                .fontWeight(.light)
+                .fixedSize(horizontal: false, vertical: true)
+                .foregroundColor(.secondary)
         }
     }
 }
