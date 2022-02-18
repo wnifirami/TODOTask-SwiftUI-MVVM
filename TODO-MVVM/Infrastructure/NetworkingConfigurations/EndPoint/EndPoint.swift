@@ -10,11 +10,12 @@ enum EndPoints {
     /// cases
     case registerUser
     case loginUser
+    case getAllTasks
 
     /// variable path qui retourne l'url a utiliser
     var path: String {
         switch self {
-
+        case .getAllTasks: return "/task"
         case .registerUser: return "/user/register"
         case .loginUser: return "/user/login"
         }

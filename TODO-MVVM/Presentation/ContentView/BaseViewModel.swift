@@ -9,10 +9,13 @@ import Foundation
 import Combine
 import Network
 class BaseViewModel: ObservableObject {
+    @Published var isLoggedIn: Bool = false
     @Published var networkStatus: NWPath.Status = .satisfied
     private let monitorQueue = DispatchQueue(label: "monitor")
     var subscriptions = Set<AnyCancellable>()
-
+    init() {
+        checkToken()
+    }
 }
 
 
@@ -26,4 +29,29 @@ extension BaseViewModel: NetworkingProtocol {
            }
            .store(in: &subscriptions)
    }
+    
+    func redirectToMain() {
+        
+    }
+    
+    func checkToken(){
+        var subscriptions = Set<AnyCancellable>()
+        let _ = KeychainStorage.getCredentials()
+            .sink { (completion) in
+                switch completion {
+                case .failure:
+                    self.isLoggedIn = false
+                    case .finished:
+                   break
+                }
+            } receiveValue: { result in
+                if let _ = result?.token  {
+                    self.isLoggedIn = true
+                } else {
+                    self.isLoggedIn = false
+                }
+            }
+            .store(in: &subscriptions)
+            
+    }
 }

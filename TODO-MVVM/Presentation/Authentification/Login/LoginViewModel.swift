@@ -17,7 +17,7 @@ protocol LoginViewModelInput {
 protocol LoginViewModelOutput {
     var state: LoginViewModel.State { get }
 }
-class LoginViewModel: ObservableObject {
+class LoginViewModel: BaseViewModel {
 
     
 enum State: Equatable {
@@ -55,14 +55,14 @@ enum State: Equatable {
     var passwordPrompt: String {
         passwordValid ? "" : TextConstants.passwordPrompt
     }
-    var subscriptions = Set<AnyCancellable>()
     private let useCase: LoginUseCaseProtocol
     
      init(
         useCase: LoginUseCaseProtocol
      ) {
         self.useCase = useCase
-         checkInputContent()
+         super.init()
+         self.checkInputContent()
     }
     
     func viewDidLoad() {
@@ -108,6 +108,7 @@ extension LoginViewModel:  LoginInputOutput {
                 debugPrint(response)
                 
                 self.state = .success(response)
+                self.isLoggedIn = true
             }
             .store(in: &subscriptions)
     }

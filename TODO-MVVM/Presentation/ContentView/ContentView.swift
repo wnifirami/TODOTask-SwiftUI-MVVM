@@ -17,7 +17,12 @@ struct ContentView: View {
         
     }
     var body: some View {
-       createView()
+        if viewModel.isLoggedIn {
+            showMain()
+        } else {
+            createView()
+        }
+      
     }
     
     @State var loginSelected: Bool = true
@@ -57,6 +62,11 @@ struct ContentView: View {
                 )
             }
         }
+    }
+    
+    @ViewBuilder
+    private func showMain() -> some View {
+        MainViewFactory.makeView()
     }
     
     @ViewBuilder

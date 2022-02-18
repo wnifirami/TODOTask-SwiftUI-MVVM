@@ -20,7 +20,7 @@ protocol RegisterViewModelOutput {
     var state: RegisterViewModel.State { get }
 }
     
-class RegisterViewModel: ObservableObject {
+class RegisterViewModel: BaseViewModel {
 
     
 enum State: Equatable {
@@ -55,13 +55,13 @@ enum State: Equatable {
     @Published var canSubmit: Bool = false
     @Published private(set) var state = State.initial
 
-    var subscriptions = Set<AnyCancellable>()
     private let useCase: RegisterUseCaseProtocol
     
      init(
         useCase: RegisterUseCaseProtocol
      ) {
         self.useCase = useCase
+         super.init()
          checkInputContent()
     }
     
@@ -97,6 +97,7 @@ extension RegisterViewModel:  InputOutput {
                 debugPrint(response)
                 
                 self.state = .success(response)
+                self.isLoggedIn = true
             }
             .store(in: &subscriptions)
     }
