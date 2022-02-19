@@ -56,6 +56,11 @@
 		EA65E05227BAEF8500CEABA8 /* EntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65E05127BAEF8500CEABA8 /* EntryField.swift */; };
 		EA65E05527BAF57100CEABA8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65E05427BAF57000CEABA8 /* StringExtension.swift */; };
 		EA65E05727BAF9D200CEABA8 /* TextConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65E05627BAF9D200CEABA8 /* TextConstants.swift */; };
+		EAE4309027C114E10048E90A /* TaskItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4308F27C114E10048E90A /* TaskItemFactory.swift */; };
+		EAE4309227C11A1B0048E90A /* TaskListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4309127C11A1B0048E90A /* TaskListFactory.swift */; };
+		EAE4309527C11D690048E90A /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4309427C11D690048E90A /* Spinner.swift */; };
+		EAE4309827C12F2A0048E90A /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4309727C12F2A0048E90A /* AddTaskView.swift */; };
+		EAE4309A27C134010048E90A /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4309927C134010048E90A /* AddTaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +133,11 @@
 		EA65E05127BAEF8500CEABA8 /* EntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryField.swift; sourceTree = "<group>"; };
 		EA65E05427BAF57000CEABA8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		EA65E05627BAF9D200CEABA8 /* TextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextConstants.swift; sourceTree = "<group>"; };
+		EAE4308F27C114E10048E90A /* TaskItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemFactory.swift; sourceTree = "<group>"; };
+		EAE4309127C11A1B0048E90A /* TaskListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListFactory.swift; sourceTree = "<group>"; };
+		EAE4309427C11D690048E90A /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		EAE4309727C12F2A0048E90A /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		EAE4309927C134010048E90A /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +217,7 @@
 			children = (
 				EA4C0A9927C00E64001A8FD3 /* TaskListView.swift */,
 				EA4C0A9B27C00EC8001A8FD3 /* TaskListViewModel.swift */,
+				EAE4309127C11A1B0048E90A /* TaskListFactory.swift */,
 			);
 			path = TaskList;
 			sourceTree = "<group>";
@@ -214,6 +225,7 @@
 		EA5B480827BD2AAE004FAA81 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				EAE4309627C12F180048E90A /* AddTask */,
 				EA4C0A9827C00E53001A8FD3 /* TaskList */,
 				EA5B480E27BD3780004FAA81 /* TaskItem */,
 				EA5B480927BD2AD5004FAA81 /* MainView.swift */,
@@ -236,6 +248,7 @@
 			children = (
 				EA5B480F27BD3793004FAA81 /* TaskItemView.swift */,
 				EA5B481327BD3A06004FAA81 /* TaskItemViewModel.swift */,
+				EAE4308F27C114E10048E90A /* TaskItemFactory.swift */,
 			);
 			path = TaskItem;
 			sourceTree = "<group>";
@@ -313,6 +326,7 @@
 		EA65E01B27BAAC1E00CEABA8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EAE4309327C11D510048E90A /* Loader */,
 				EA5B480B27BD32D6004FAA81 /* CalendarView */,
 				EA5B480827BD2AAE004FAA81 /* MainView */,
 				EA65E04B27BAC1B700CEABA8 /* ContentView */,
@@ -486,6 +500,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		EAE4309327C11D510048E90A /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				EAE4309427C11D690048E90A /* Spinner.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		EAE4309627C12F180048E90A /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				EAE4309727C12F2A0048E90A /* AddTaskView.swift */,
+				EAE4309927C134010048E90A /* AddTaskViewModel.swift */,
+			);
+			path = AddTask;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -624,6 +655,7 @@
 			files = (
 				EA4C0A9527C0061D001A8FD3 /* TaskUseCase.swift in Sources */,
 				EA65E04D27BAC1DC00CEABA8 /* ContentFactory.swift in Sources */,
+				EAE4309827C12F2A0048E90A /* AddTaskView.swift in Sources */,
 				EA0DD02B27BBDDD10007B284 /* LoginViewFactory.swift in Sources */,
 				EA5B480D27BD32F1004FAA81 /* CalendarView.swift in Sources */,
 				EA65E03027BAB0D800CEABA8 /* NetworkRequest.swift in Sources */,
@@ -646,11 +678,13 @@
 				EA4C0A8E27BFFFE5001A8FD3 /* MainViewModel.swift in Sources */,
 				EA65E03E27BAB6B600CEABA8 /* AuthentificationRepository.swift in Sources */,
 				EA0DD02227BBCDFE0007B284 /* BundleExtension.swift in Sources */,
+				EAE4309A27C134010048E90A /* AddTaskViewModel.swift in Sources */,
 				EA65E04627BAB8FB00CEABA8 /* RegisterViewModel.swift in Sources */,
 				EA65DFF127BAAB9F00CEABA8 /* TODO_MVVMApp.swift in Sources */,
 				EA0DD02027BBCD030007B284 /* KeychainStorage.swift in Sources */,
 				EA0DD01827BBC4BC0007B284 /* ImageNames.swift in Sources */,
 				EA0DD02727BBD9290007B284 /* LoginViewModel.swift in Sources */,
+				EAE4309527C11D690048E90A /* Spinner.swift in Sources */,
 				EA65E02427BAADD100CEABA8 /* AppConfiguration.swift in Sources */,
 				EA4C0A9C27C00EC8001A8FD3 /* TaskListViewModel.swift in Sources */,
 				EA0DD02927BBDADC0007B284 /* LoginUseCase.swift in Sources */,
@@ -660,10 +694,12 @@
 				EA65E03B27BAB64400CEABA8 /* User.swift in Sources */,
 				EA4C0A9A27C00E64001A8FD3 /* TaskListView.swift in Sources */,
 				EA65E04427BAB8EA00CEABA8 /* RegisterFactory.swift in Sources */,
+				EAE4309027C114E10048E90A /* TaskItemFactory.swift in Sources */,
 				EA5B480A27BD2AD5004FAA81 /* MainView.swift in Sources */,
 				EA0DD01A27BBC5410007B284 /* ErrorViewFactory.swift in Sources */,
 				EA5B481227BD39C1004FAA81 /* Task.swift in Sources */,
 				EA0DD01527BBC4600007B284 /* ErrorViewModel.swift in Sources */,
+				EAE4309227C11A1B0048E90A /* TaskListFactory.swift in Sources */,
 				EA4C0A9727C0083B001A8FD3 /* MainViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

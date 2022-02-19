@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
     @ObservedObject var viewModel: BaseViewModel
     
     init(
@@ -17,7 +18,7 @@ struct ContentView: View {
         
     }
     var body: some View {
-        if viewModel.isLoggedIn {
+        if isLoggedIn {
             showMain()
         } else {
             createView()

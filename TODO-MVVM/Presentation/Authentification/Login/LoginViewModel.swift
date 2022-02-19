@@ -94,6 +94,7 @@ enum State: Equatable {
 
 extension LoginViewModel:  LoginInputOutput {    
     func loginUser() {
+        self.state = .loading
         useCase.execute(requestValue: makeQuery())
             .receive(on: DispatchQueue.main)
             .sink { (completion) in
@@ -108,13 +109,16 @@ extension LoginViewModel:  LoginInputOutput {
                 debugPrint(response)
                 
                 self.state = .success(response)
-                self.isLoggedIn = true
+                self.redirectToMain()
+                
             }
             .store(in: &subscriptions)
     }
     
     private func saveUserInKeyChain(user: RegisterResponse) {
+        
         useCase.saveUser(requestValue: user)
+            .receive(on: DispatchQueue.main)
             .sink { (completion) in
                 switch completion {
                 case .failure( _):

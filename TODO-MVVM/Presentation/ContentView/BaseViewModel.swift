@@ -8,8 +8,9 @@
 import Foundation
 import Combine
 import Network
+import SwiftUI
 class BaseViewModel: ObservableObject {
-    @Published var isLoggedIn: Bool = false
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
     @Published var networkStatus: NWPath.Status = .satisfied
     private let monitorQueue = DispatchQueue(label: "monitor")
     var subscriptions = Set<AnyCancellable>()
@@ -31,7 +32,7 @@ extension BaseViewModel: NetworkingProtocol {
    }
     
     func redirectToMain() {
-        
+        self.isLoggedIn = true
     }
     
     func checkToken(){

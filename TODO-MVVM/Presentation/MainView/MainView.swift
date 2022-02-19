@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var date = Date()
+    @State private var tapped: Bool = false
     @ObservedObject var viewModel: MainViewModel
     
     init(
@@ -26,12 +27,45 @@ struct MainView: View {
               
                 CalendarView(date: $date)
                 createView()
+                Spacer()
                    
+            }
+            if tapped {
+                ZStack {
+                    ColorConstants.darkGray.opacity(0.8)
+                        .ignoresSafeArea(.all)
+                        AddTaskView()
+                }
+                
             }
         }
         .onAppear {
             viewModel.viewDidLoad()
         }
+        .overlay(VStack {
+            Spacer()
+            HStack{
+                Spacer()
+                Button {
+                    withAnimation {
+                        tapped.toggle()
+
+                    }
+                    
+                } label: {
+                    Image(systemName: tapped ? "xmark" : "plus")
+                        .font(.title)
+                        .foregroundColor(Color(UIColor.systemBackground))
+                        .padding()
+                        .shadow(color: .white, radius: 2, x: 0, y: 2)
+                        .background(Circle().fill(Color.blue) )
+                       
+                }
+                .shadow(color: .secondary, radius: 4, x: 1, y: 2)
+                .padding()
+
+            }
+        })
       
         
     }
@@ -40,11 +74,14 @@ struct MainView: View {
     private func createView() -> some View {
         switch viewModel.state {
         case .initial,.loading:
-           EmptyView()
+           Spinner()
         case.success(let tasks):
-            TaskListView(viewModel: TaskListViewModel(tasks: tasks))
+            TaskListFactory.makeView(for: tasks, date: date)
         case .fail(let error):
-           EmptyView()
+            ErrorViewFactory.makeView(
+                from: error.localizedDescription,
+                isNetwork: false
+            )
 
         }
     }

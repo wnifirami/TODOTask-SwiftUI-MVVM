@@ -10,13 +10,12 @@ import SwiftUI
 struct TaskListView: View {
     @State private var isGridViewActive: Bool = false
     let haptics = UIImpactFeedbackGenerator(style: .medium)
-    @State private var gridLayout: [GridItem] = [GridItem(.flexible())]
-    @State private var gridColumn: Int = 1
-    @State private var toolbarIcon: String = "square.grid.2x2"
     @State var currentStatus: TasksStatus = .all
     @ObservedObject var viewModel: TaskListViewModel
-    init(viewModel: TaskListViewModel) {
+    init(
+viewModel: TaskListViewModel    ) {
         self.viewModel = viewModel
+       
     }
     var body: some View {
         VStack (alignment: .center){
@@ -30,9 +29,9 @@ struct TaskListView: View {
                             print ("grid item is activated")
                             isGridViewActive = true
                             haptics.impactOccurred()
-                            gridSwitch()
+                            viewModel.gridSwitch()
                         }) {
-                            Image(systemName: toolbarIcon)
+                            Image(systemName: viewModel.toolbarIcon)
                                 .font(.title3)
                                 .foregroundColor(Color.secondary)
                                 .shadow(radius: 2)
@@ -49,37 +48,40 @@ struct TaskListView: View {
             .zIndex(0)
         }
     }
-    @ViewBuilder private func createList() -> some View {
-        Group {
-
+    @ViewBuilder
+    private func createList() -> some View {
+        let items = viewModel.filterAssignment(status: currentStatus)
+        if items.isEmpty {
             VStack {
-
-
-                ScrollView( .vertical, showsIndicators: false) {
-                        LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
-                            ForEach(viewModel.filterAssignment(status: currentStatus)) { item in
-                               TaskItemView(viewModel: TaskItemViewModel(item: item))
-                            }// loop
-                        }//: Grid
-                        .padding(10)
-                        .animation(.easeIn)
+                Spacer()
+                VStack() {
+                    Image("taskNotFound")
+                        .resizable()
+                        .frame(width: 150, height: 150, alignment: .leading)
+                    Text("No tasks were found for today!")
+                     .font(.title3)
+                 .fontWeight(.bold)
                 }
-            }//: scroll
-        }// : Group
-    }
-        
-        func gridSwitch() {
-            gridLayout = Array(repeating: .init(.flexible()), count: gridLayout.count % 3 + 1)
-            gridColumn = gridLayout.count
-            print ("grid number", gridColumn)
-            switch gridColumn {
-            case 1: toolbarIcon = "square.grid.2x2.fill"
-            case 2:  toolbarIcon = "square.grid.3x2.fill"
-            case 3:  toolbarIcon = "rectangle.grid.1x2.fill"
-            default:  toolbarIcon = "square.grid.2x2.fill"
+                .padding()
+                Spacer()
+            }
+        } else {
+            Group {
+                VStack {
+                    ScrollView( .vertical, showsIndicators: false) {
+                        LazyVGrid(columns: viewModel.gridLayout, alignment: .center, spacing: 10) {
+                                ForEach(items) { item in
+                                    TaskItemFactory.makeView(for: item)
+                                }
+                            }
+                            .padding(10)
+                            .animation(.easeIn)
+                    }
+                }
             }
         }
-    
+
+    }
     @ViewBuilder
     private func createAssignmentMenuView(status: TasksStatus) -> some View {
 

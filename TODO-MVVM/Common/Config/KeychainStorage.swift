@@ -5,7 +5,7 @@
 //  Created by Rami Ounifi on 15/2/2022.
 //
 
-import Foundation
+import SwiftUI
 import SwiftKeychainWrapper
 import Combine
 
@@ -34,7 +34,9 @@ enum KeychainStorage {
     }
     
     static func deleteCredentials() -> AnyPublisher<Bool, Never> {
+        @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
         if KeychainWrapper.standard.removeObject(forKey: Self.key) {
+            isLoggedIn = false
             return Just(true).eraseToAnyPublisher()
         } else {
             return Just(false).eraseToAnyPublisher()

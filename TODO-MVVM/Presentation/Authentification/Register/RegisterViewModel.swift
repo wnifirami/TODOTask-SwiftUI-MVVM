@@ -83,6 +83,7 @@ enum State: Equatable {
 
 extension RegisterViewModel:  InputOutput {
     func registerUser() {
+        self.state = .loading
         useCase.execute(requestValue: makeQuery())
             .receive(on: DispatchQueue.main)
             .sink { (completion) in
@@ -97,7 +98,7 @@ extension RegisterViewModel:  InputOutput {
                 debugPrint(response)
                 
                 self.state = .success(response)
-                self.isLoggedIn = true
+                self.redirectToMain()
             }
             .store(in: &subscriptions)
     }
