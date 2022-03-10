@@ -29,4 +29,13 @@ struct Task: Codable, Identifiable {
     }
 }
 
+struct AddTaskResponse: Codable {
+    let success: Bool
+    let data: Task
+}
+
+struct AddTaskRequest: Codable {
+    let description: String
+}
+
 typealias Tasks = [Task]

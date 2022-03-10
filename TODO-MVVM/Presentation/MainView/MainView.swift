@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @State private var date = Date()
     @State private var tapped: Bool = false
+    @State private var finished: Bool = true
     @ObservedObject var viewModel: MainViewModel
     
     init(
@@ -30,17 +31,15 @@ struct MainView: View {
                 Spacer()
                    
             }
-            if tapped {
-                ZStack {
-                    ColorConstants.darkGray.opacity(0.8)
-                        .ignoresSafeArea(.all)
-                        AddTaskView()
-                }
-                
-            }
+          
         }
         .onAppear {
             viewModel.viewDidLoad()
+        }
+        .sheet(isPresented: $tapped, onDismiss: {
+            viewModel.getTasks()
+        }) {
+            AddTaskViewFactory.makeView()
         }
         .overlay(VStack {
             Spacer()
@@ -48,8 +47,7 @@ struct MainView: View {
                 Spacer()
                 Button {
                     withAnimation {
-                        tapped.toggle()
-
+                        tapped = true
                     }
                     
                 } label: {
@@ -66,6 +64,7 @@ struct MainView: View {
 
             }
         })
+     
       
         
     }

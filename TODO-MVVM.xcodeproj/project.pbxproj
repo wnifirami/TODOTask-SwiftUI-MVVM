@@ -56,6 +56,7 @@
 		EA65E05227BAEF8500CEABA8 /* EntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65E05127BAEF8500CEABA8 /* EntryField.swift */; };
 		EA65E05527BAF57100CEABA8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65E05427BAF57000CEABA8 /* StringExtension.swift */; };
 		EA65E05727BAF9D200CEABA8 /* TextConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65E05627BAF9D200CEABA8 /* TextConstants.swift */; };
+		EAA5642827DA159B00FDBAF5 /* AddTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA5642727DA159B00FDBAF5 /* AddTaskFactory.swift */; };
 		EAE4309027C114E10048E90A /* TaskItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4308F27C114E10048E90A /* TaskItemFactory.swift */; };
 		EAE4309227C11A1B0048E90A /* TaskListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4309127C11A1B0048E90A /* TaskListFactory.swift */; };
 		EAE4309527C11D690048E90A /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4309427C11D690048E90A /* Spinner.swift */; };
@@ -133,6 +134,7 @@
 		EA65E05127BAEF8500CEABA8 /* EntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryField.swift; sourceTree = "<group>"; };
 		EA65E05427BAF57000CEABA8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		EA65E05627BAF9D200CEABA8 /* TextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextConstants.swift; sourceTree = "<group>"; };
+		EAA5642727DA159B00FDBAF5 /* AddTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskFactory.swift; sourceTree = "<group>"; };
 		EAE4308F27C114E10048E90A /* TaskItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemFactory.swift; sourceTree = "<group>"; };
 		EAE4309127C11A1B0048E90A /* TaskListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListFactory.swift; sourceTree = "<group>"; };
 		EAE4309427C11D690048E90A /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 			children = (
 				EAE4309727C12F2A0048E90A /* AddTaskView.swift */,
 				EAE4309927C134010048E90A /* AddTaskViewModel.swift */,
+				EAA5642727DA159B00FDBAF5 /* AddTaskFactory.swift */,
 			);
 			path = AddTask;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				EAE4309A27C134010048E90A /* AddTaskViewModel.swift in Sources */,
 				EA65E04627BAB8FB00CEABA8 /* RegisterViewModel.swift in Sources */,
 				EA65DFF127BAAB9F00CEABA8 /* TODO_MVVMApp.swift in Sources */,
+				EAA5642827DA159B00FDBAF5 /* AddTaskFactory.swift in Sources */,
 				EA0DD02027BBCD030007B284 /* KeychainStorage.swift in Sources */,
 				EA0DD01827BBC4BC0007B284 /* ImageNames.swift in Sources */,
 				EA0DD02727BBD9290007B284 /* LoginViewModel.swift in Sources */,

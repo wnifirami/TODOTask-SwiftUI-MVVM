@@ -11,6 +11,7 @@ import Foundation
 enum TasksServiceEndpoints {
   // organise all the end points here for clarity
     case getTasks
+    case addTask(request: AddTaskRequest)
     
 
   //specify the type of HTTP request
@@ -18,6 +19,8 @@ enum TasksServiceEndpoints {
         switch self {
         case .getTasks:
             return .GET
+        case .addTask:
+            return .POST
         }
     }
     
@@ -31,6 +34,8 @@ enum TasksServiceEndpoints {
         switch self {
         case .getTasks:
             return nil
+        case .addTask(let task):
+            return task
 
         }
     }
@@ -38,7 +43,8 @@ enum TasksServiceEndpoints {
   // compose urls for each request
     func getURL() -> String {
         switch self {
-        case .getTasks: return EndPoints.getAllTasks.description
+        case .getTasks, .addTask:
+            return EndPoints.getAllTasks.description
         }
     }
 }

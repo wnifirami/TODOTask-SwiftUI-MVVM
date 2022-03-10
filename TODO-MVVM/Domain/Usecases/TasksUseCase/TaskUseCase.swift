@@ -9,11 +9,16 @@ import Foundation
 import Combine
 protocol TaskUseCaseProtocol {
     func execute()  -> AnyPublisher<TaskResponse, NetworkError>
+    func execute(item: AddTaskRequest) -> AnyPublisher<AddTaskResponse, NetworkError>
 }
 
 
 
 class TaskUseCase: TaskUseCaseProtocol {
+    func execute(item: AddTaskRequest) -> AnyPublisher<AddTaskResponse, NetworkError> {
+        taskRepository.addTask(from: item)
+    }
+    
 
 
     private let taskRepository: TasksRepositoryProtocol

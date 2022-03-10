@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TaskItemView: View {
+    @State private var calendarWiggles = false
     @State private var stroken = false
     let viewModel: TaskItemViewModel
     init(
@@ -40,9 +41,30 @@ struct TaskItemView: View {
 
             
         }
-        
+        .overlay(
+           
+            HStack {
+                Image("attach")
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: .leading)
+                    .offset( y: -35)
+                
+                if calendarWiggles {
+                Spacer()
+                Image(systemName: "minus.circle.fill")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(Color(.red))
+                    .offset( y: -35)
+            }
+            }
+        )
+   
         .frame(height: 80, alignment: .center)
         .background(ColorConstants.yellowColor.opacity(0.6))
+        .onLongPressGesture(perform: {
+            calendarWiggles.toggle()
+        })
+        
 
     }
 }
