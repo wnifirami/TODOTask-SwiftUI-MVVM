@@ -14,4 +14,8 @@ class TODO_MVVMTests: XCTestCase {
         XCTAssertEqual(2*2, 4)
     }
 
+    func testSquareExample() {
+        XCTAssertEqual(2*2*2*2, 16)
+    }
+
 }
